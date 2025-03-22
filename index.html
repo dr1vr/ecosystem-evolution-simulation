@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosystem Evolution Simulation</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/test-ui.css">
+</head>
+<body>
+    <div id="simulation-container">
+        <canvas id="ecosystem-canvas"></canvas>
+    </div>
+    
+    <div id="ui-container">
+        <div id="controls-panel" class="panel">
+            <div class="panel-header">
+                <h3>Simulation Controls</h3>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="control-group">
+                    <label>Simulation Speed</label>
+                    <input type="range" id="speed-slider" min="0" max="10" value="5">
+                    <span id="speed-value">5x</span>
+                </div>
+                
+                <div class="control-group">
+                    <label>Environment Size</label>
+                    <select id="environment-size">
+                        <option value="small">Small (500x500)</option>
+                        <option value="medium" selected>Medium (1000x1000)</option>
+                        <option value="large">Large (2000x2000)</option>
+                    </select>
+                </div>
+                
+                <div class="control-group buttons">
+                    <button id="start-btn">Start</button>
+                    <button id="pause-btn">Pause</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="stats-panel" class="panel">
+            <div class="panel-header">
+                <h3>Ecosystem Statistics</h3>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <div class="stat-label">Generation</div>
+                        <div id="stat-generation" class="stat-value">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Population</div>
+                        <div id="stat-population" class="stat-value">0</div>
+                    </div>
+                </div>
+                
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <div class="stat-label">Average Fitness</div>
+                        <div id="stat-avg-fitness" class="stat-value">0.0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Max Fitness</div>
+                        <div id="stat-max-fitness" class="stat-value">0.0</div>
+                    </div>
+                </div>
+                
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <div class="stat-label">Resources</div>
+                        <div id="stat-resources" class="stat-value">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">FPS</div>
+                        <div id="stat-fps" class="stat-value">0</div>
+                    </div>
+                </div>
+                
+                <canvas id="population-chart" width="380" height="150"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Load external libraries first -->
+    <script src="lib/chart.min.js"></script>
+    
+    <!-- Load core simulation components -->
+    <script src="js/core/Simulation.js"></script>
+    <script src="js/core/Config.js"></script>
+    
+    <!-- Load environment components -->
+    <script src="js/environment/Environment.js"></script>
+    <script src="js/environment/Resource.js"></script>
+    <script src="js/environment/Obstacle.js"></script>
+    
+    <!-- Load entity components -->
+    <script src="js/entities/Entity.js"></script>
+    <script src="js/entities/Creature.js"></script>
+    <script src="js/entities/Plant.js"></script>
+    
+    <!-- Load neural network and genetic algorithm components -->
+    <script src="js/utils/NeuralNetwork.js"></script>
+    <script src="js/utils/GeneticAlgorithm.js"></script>
+    <script src="js/utils/TestHarness.js"></script>
+    
+    <!-- Load UI components -->
+    <script src="js/ui/UIManager.js"></script>
+    <script src="js/ui/StatsPanel.js"></script>
+    <script src="js/ui/TestUI.js"></script>
+    
+    <!-- Load main application script -->
+    <script src="js/App.js"></script>
+</body>
+</html>
